@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://wiki.arenatech.dev/sitemap.xml
