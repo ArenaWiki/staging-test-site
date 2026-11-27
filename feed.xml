@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
-    <title>ArenaWiki (Staging) </title>
+    <title>ArenaWiki Group</title>
     <link href="https://wiki.arenatech.dev/feed.xml" rel="self" />
     <link href="https://wiki.arenatech.dev" />
     <updated>2026-11-27T14:02:01+08:00</updated>
