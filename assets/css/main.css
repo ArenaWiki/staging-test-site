@@ -545,8 +545,13 @@ p { text-wrap: pretty; }
 .entry__content ul > li::before { content: "→"; position: absolute; left: -1.4em; color: var(--primary); }
 .entry__content blockquote { margin-inline: 0; padding-left: 24px; border-left: 2px solid var(--heading); color: var(--heading); font-size: 1.2em; line-height: 1.45; letter-spacing: -.01em; }
 .entry__content blockquote > :last-child { margin-bottom: 0; }
-.entry__content hr { height: 0; border: 0; margin-block: 3em; text-align: center; }
-.entry__content hr::after { content: "◆ ◆ ◆"; color: var(--muted); font-size: .7rem; letter-spacing: 1em; }
+.entry__content hr {
+    display: block; height: auto; overflow: visible;
+    margin: 2.6em 0; padding: 0; border: 0; background: none;
+    color: var(--muted); text-align: center; line-height: 1;
+}
+.entry__content hr::after { content: "◆\2002◆\2002◆"; display: inline-block; font-size: .7rem; }
+.entry__content strong, .entry__content b { color: var(--heading); font-weight: 650; }
 .entry__content code { padding: .12em .35em; border-radius: var(--radius-sm); background: var(--surface); color: var(--heading); font-size: .88em; }
 .entry__content pre { padding: 20px 24px; border-radius: var(--radius); background: var(--surface); overflow-x: auto; font-size: .88em; line-height: 1.6; }
 .entry__content pre code { padding: 0; background: none; }
