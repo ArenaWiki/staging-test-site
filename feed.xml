@@ -3,7 +3,7 @@
     <title>ArenaWiki Group</title>
     <link href="https://wiki.arenatech.dev/feed.xml" rel="self" />
     <link href="https://wiki.arenatech.dev" />
-    <updated>2026-11-28T21:52:35+08:00</updated>
+    <updated>2026-11-28T21:53:59+08:00</updated>
     <author>
         <name>Staff</name>
     </author>
@@ -208,7 +208,7 @@
 <p>- Buildaroo, Fischipedia</p>
 </blockquote>
 <p>Secondly, when starting your wiki or forking, choose your license correctly. By default, MediaWiki defaults to CC-BY-SA 4.0, which allows for anyone to re-use your content as long as they credit and attribute you. </p>
-<p>Increasingly, most wikis are also choosing to use the CC-BY-SA-NC 4.0 license, which adds a non-commercial usage clause to anyone who would like to re-use your content. </p>
+<p>Increasingly, most wikis however are choosing to use the CC-BY-SA-NC 4.0 license, which adds a non-commercial usage clause to anyone who would like to re-use your content. </p>
 <p>We started using this with The Hybrid Cafe wiki to stop people from copying our site data over to Fandom, which serves ads on its websites. Fischipedia did the same to ensure that the Fisch Fandom Wiki doesn't take its content. In this case, it stops people from copying your website content and slapping over ads, like these AI sites.  </p>
 <p>This is why <code>fisch.wiki</code> couldn't legally copy over the Official Fisch Wiki, only <code>fisch.fandom.com</code>. Fandom's license, CC-BY-SA allowed for commercial usage, but Fischipedia's didn't. There will always be bad actors who flout these rules, <code>fischhelp.wiki</code> still uses content from the Official Fisch Wiki, but it is a good deterrent to leave your community alone. </p>
 <h2>Don't let AI write your wiki</h2>
