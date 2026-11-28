@@ -552,12 +552,52 @@ p { text-wrap: pretty; }
 }
 .entry__content hr::after { content: "◆\2002◆\2002◆"; display: inline-block; font-size: .7rem; }
 .entry__content strong, .entry__content b { color: var(--heading); font-weight: 650; }
+/* Tables — modelled on MediaWiki's Citizen skin: rounded box, tinted header, hairline cells */
+.table-wrap, .entry__content > table {
+    margin: 0 0 1.6em; border: 1px solid var(--border); border-radius: var(--radius);
+    background: var(--surface);
+}
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
+.table-wrap:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.entry__content table {
+    width: 100% !important; height: auto !important;
+    border-collapse: separate !important; border-spacing: 0; table-layout: fixed;
+    font-size: .875em; line-height: 1.55; font-variant-numeric: tabular-nums;
+}
+.entry__content table[style*="--cols"] { min-width: calc(var(--cols) * 7em); }
+@media (max-width: 600px) { .entry__content table[style*="--cols"] { min-width: calc(var(--cols) * 9.5em); } }
+.table-wrap > table { margin: 0; border: 0; border-radius: 0; background: none; }
+.entry__content > table { overflow: hidden; }
+.entry__content table caption {
+    caption-side: top; padding: .75em 1em; text-align: left;
+    color: var(--heading); font-weight: 600; border-bottom: 1px solid var(--border);
+}
+.entry__content tr { height: auto !important; }
+.entry__content th, .entry__content td {
+    height: auto !important; padding: .6em .9em;
+    border: 0 !important; border-bottom: 1px solid var(--border) !important;
+    text-align: left; vertical-align: top;
+}
+.entry__content th + th, .entry__content th + td, .entry__content td + td, .entry__content td + th { border-left: 1px solid var(--border) !important; }
+.entry__content tr:last-child > td, .entry__content tr:last-child > th { border-bottom: 0 !important; }
+.entry__content thead + tbody tr:first-child > * { border-top: 0; }
+.entry__content thead tr:last-child > * { border-bottom: 1px solid var(--border) !important; }
+.entry__content th, .entry__content table.has-header tr:first-child > td {
+    background: var(--surface-2); color: var(--heading); font-weight: 600;
+}
+.entry__content tbody tr { transition: background-color .15s; }
+@media (hover: hover) {
+    .entry__content tbody tr:hover > td { background: color-mix(in srgb, var(--surface-2) 55%, transparent); }
+    .entry__content table.has-header tbody tr:first-child:hover > td { background: var(--surface-2); }
+}
+.entry__content td img, .entry__content th img { max-width: 100%; height: auto; border-radius: calc(var(--radius) * .6); }
+.entry__content td > :last-child, .entry__content th > :last-child { margin-bottom: 0; }
+.entry__content td code, .entry__content th code { font-size: .92em; overflow-wrap: anywhere; }
+.entry__content td, .entry__content th { overflow-wrap: break-word; }
+.entry__content table[align="center"], .entry__content table[style*="margin-left: auto"] { margin-inline: auto; }
 .entry__content code { padding: .12em .35em; border-radius: var(--radius-sm); background: var(--surface); color: var(--heading); font-size: .88em; }
 .entry__content pre { padding: 20px 24px; border-radius: var(--radius); background: var(--surface); overflow-x: auto; font-size: .88em; line-height: 1.6; }
 .entry__content pre code { padding: 0; background: none; }
-.entry__content table { display: block; width: 100%; overflow-x: auto; border-collapse: collapse; font-size: .92em; font-feature-settings: "tnum" 1; }
-.entry__content th, .entry__content td { padding: 10px 14px 10px 0; border-bottom: 1px solid var(--border); text-align: left; }
-.entry__content th { color: var(--heading); font-weight: 600; border-bottom-color: var(--heading); }
 .entry__content .lead { color: var(--heading); font-size: 1.24em; line-height: 1.45; letter-spacing: -.01em; }
 .entry__content .box-info { padding: 16px 20px; border-left: 2px solid var(--primary); background: var(--primary-soft); color: var(--heading); }
 .entry__content .post__image--wide, .entry__content .gallery-wrapper--wide { width: min(1080px, 100vw - var(--gutter) * 2); max-width: none; margin-left: 50%; transform: translateX(-50%); }
