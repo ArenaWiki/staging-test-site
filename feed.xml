@@ -3,7 +3,7 @@
     <title>ArenaWiki Group</title>
     <link href="https://wiki.arenatech.dev/feed.xml" rel="self" />
     <link href="https://wiki.arenatech.dev" />
-    <updated>2026-11-28T21:51:18+08:00</updated>
+    <updated>2026-11-28T21:52:35+08:00</updated>
     <author>
         <name>Staff</name>
     </author>
@@ -169,9 +169,10 @@
 <p>Smaller wikis naturally have a harder time as they don't have the same traffic and resources. Ozo, A staff member of the Tectonic Industries wiki notes that, "several people on the game's discord had mentioned this site, as it appears above the actual wiki when searching for the wiki".</p>
 <p>Its not easy for wikis to beat such highly SEO optimised websites, and such websites are extremely disrespectful to wikis, especially considering most use wiki content and violate licensing terms. </p>
 <blockquote>
-<p>That slop wiki hasn't updated since the game's demo release, it basically took our wiki's content before the demo, as the wiki was established back then, and pasted it with hallucinations, like introducing "tiers" for ores, while the game doesn't have anything like that. <br>- Ozo, Tectonic Industries Wiki Staff</p>
+<p>That slop wiki hasn't updated since the game's demo release, it basically took our wiki's content before the demo, as the wiki was established back then, and pasted it with hallucinations, like introducing "tiers" for ores, while the game doesn't have anything like that. </p>
+<p><br>- Ozo, Tectonic Industries Wiki</p>
 </blockquote>
-<p>So far, their attempts at taking down their site with Google or CloudFlare have not been sucessful. </p>
+<p>So far, their attempts at taking down their site with Google or Cloudflare have not been sucessful. </p>
 <h2>So who runs these websites? </h2>
 <p>Tracing any ownership is really hard, and I couldn't find out exaclty who was behind these. But while searching, there are some interesting things to takeaway.  </p>
 <p>Firstly, while a group of these sites are likely run by the same people, there is more than one individual in on this. There are groups of similar designs you can see, and lots of these have shared architecture that we can use to tell them alike: boilerplate privacy policy templates, and similar wording on their legal pages.  </p>
@@ -204,7 +205,7 @@
 <p>By keeping your content updated and accurate, not only do you rank higher SEO wise, but you also become the better resource that players will want to use. </p>
 <blockquote>
 <p>It pisses me off, but they don't catch on, especially with Fisch because they don't get updated, so they fall off fast. </p>
-<p>- Buildaroo, Fisch Wiki Administrator</p>
+<p>- Buildaroo, Fischipedia</p>
 </blockquote>
 <p>Secondly, when starting your wiki or forking, choose your license correctly. By default, MediaWiki defaults to CC-BY-SA 4.0, which allows for anyone to re-use your content as long as they credit and attribute you. </p>
 <p>Increasingly, most wikis are also choosing to use the CC-BY-SA-NC 4.0 license, which adds a non-commercial usage clause to anyone who would like to re-use your content. </p>
