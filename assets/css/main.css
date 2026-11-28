@@ -21,6 +21,11 @@
 
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
+/* Instrument Serif (SIL OFL) — used for editorial quotes */
+@font-face { font-family: "Instrument Serif"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/instrument-serif-latin-400-normal.woff2") format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: swap; src: url("../fonts/instrument-serif-latin-400-italic.woff2") format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: "Instrument Serif"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/instrument-serif-latin-ext-400-normal.woff2") format("woff2"); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: swap; src: url("../fonts/instrument-serif-latin-ext-400-italic.woff2") format("woff2"); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 16px); }
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -543,8 +548,44 @@ p { text-wrap: pretty; }
 .entry__content ul { list-style: none; padding-left: 1.4em; }
 .entry__content ul > li { position: relative; }
 .entry__content ul > li::before { content: "→"; position: absolute; left: -1.4em; color: var(--primary); }
-.entry__content blockquote { margin-inline: 0; padding-left: 24px; border-left: 2px solid var(--heading); color: var(--heading); font-size: 1.2em; line-height: 1.45; letter-spacing: -.01em; }
+/* Quotes — editorial (default): centred serif between hairlines, with a large quotation mark */
+.entry__content blockquote {
+    --quote-font: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+    margin: 2.6em 0; padding: 1.5em 0 1.6em;
+    border: 0; border-block: 1px solid var(--border);
+    color: var(--heading); text-align: center;
+}
+.quote-font-allo .entry__content blockquote { --quote-font: var(--font); }
+.entry__content blockquote + blockquote { margin-top: -2.6em; border-top: 0; }
+.quotes-simple .entry__content blockquote + blockquote { margin-top: 0; }
+.entry__content blockquote::before {
+    content: "\201C"; display: block; height: .5em; margin: 0 auto .45em;
+    font-family: var(--font); font-weight: 800; font-size: 4.2rem; line-height: .9;
+    font-variation-settings: "ROND" 100; color: var(--heading);
+}
+.entry__content blockquote > p, .entry__content blockquote > div {
+    margin: 0 auto .55em; max-width: 34ch;
+    font-family: var(--quote-font); font-weight: 400;
+    font-size: clamp(1.75rem, 1.1rem + 2.4vw, 2.5rem); line-height: 1.12; letter-spacing: -.012em;
+    text-wrap: balance;
+}
+.quote-font-allo .entry__content blockquote > p { font-weight: 500; letter-spacing: -.025em; line-height: 1.18; max-width: 26ch; }
 .entry__content blockquote > :last-child { margin-bottom: 0; }
+.entry__content blockquote .quote__source, .entry__content blockquote > cite, .entry__content blockquote > footer {
+    display: block; max-width: none; margin: 1.15em 0 0; padding: 1.05em 0 0;
+    border-top: 1px solid var(--border);
+    font-family: var(--quote-font); font-style: italic; font-weight: 400;
+    font-size: clamp(1.35rem, 1rem + 1.4vw, 1.85rem); line-height: 1.2; letter-spacing: 0;
+}
+.quote-font-allo .entry__content blockquote .quote__source { font-style: normal; font-weight: 500; font-size: 1.15rem; }
+.entry__content blockquote .quote__source cite { font-style: inherit; }
+.entry__content blockquote a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .14em; }
+/* Quotes — simple: the original left-rule style */
+.quotes-simple .entry__content blockquote { margin: 0 0 1.2em; padding: 0 0 0 24px; border: 0; border-left: 2px solid var(--heading); text-align: left; font-size: 1.2em; line-height: 1.45; letter-spacing: -.01em; }
+.quotes-simple .entry__content blockquote::before { content: none; }
+.quotes-simple .entry__content blockquote > p, .quotes-simple .entry__content blockquote .quote__source { max-width: none; margin: 0 0 1em; padding: 0; border: 0; font: inherit; }
+.quotes-simple .entry__content blockquote > :last-child { margin-bottom: 0; }
+.quotes-simple .entry__content blockquote .quote__source { color: var(--muted); font-size: .85em; }
 .entry__content hr {
     display: block; height: auto; overflow: visible;
     margin: 2.6em 0; padding: 0; border: 0; background: none;

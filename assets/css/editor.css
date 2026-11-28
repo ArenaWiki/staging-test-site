@@ -11,6 +11,12 @@ body {
 h1, h2, h3, h4, h5, h6 { font-family: "Allo", system-ui, sans-serif; font-weight: 640; letter-spacing: -.022em; line-height: 1.15; }
 strong, b { font-weight: 650; }
 
+@font-face { font-family: "Instrument Serif"; font-style: normal; font-weight: 400; src: url("../fonts/instrument-serif-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Instrument Serif"; font-style: italic; font-weight: 400; src: url("../fonts/instrument-serif-latin-400-italic.woff2") format("woff2"); }
+blockquote { text-align: center; border: 0; border-block: 1px solid rgba(128,128,128,.35); padding: 1em 0; margin-inline: 0; }
+blockquote::before { content: "\201C"; display: block; font-family: "Allo", sans-serif; font-weight: 800; font-size: 3rem; line-height: .8; height: .5em; margin-bottom: .3em; }
+blockquote p { font-family: "Instrument Serif", Georgia, serif; font-size: 1.7em; line-height: 1.15; }
+
 .lead { font-size: 1.2em; line-height: 1.5; }
 
 /* Horizontal rule: shown the way it appears on the site */
